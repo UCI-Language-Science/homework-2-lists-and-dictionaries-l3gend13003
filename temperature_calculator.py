@@ -23,7 +23,21 @@
 def temperature_calculator():
     # YOUR CODE GOES HERE
     # You can delete the line below when you start adding code
-    pass
+    total_temperature = 0
+    count = 0
+    while True:
+        user_input = input ("Enter a temperature (or 'quit' to stop):")
+        if user_input.lower() == 'quit':
+            print("Goodbye.")
+            break
+        try:
+            temperature = float(user_input)
+            total_temperature += temperature
+            count += 1
+            mean_temperature = total_temperature / count
+            print(f"The average temperature so far is: {mean_temperature:.2f}")
+        except ValueError:
+            print("Please enter a valid number or 'quit' to stop.")
 
 if __name__ == "__main__":
     temperature_calculator()
